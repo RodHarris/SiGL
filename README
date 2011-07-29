@@ -1,0 +1,83 @@
+SiGL - README
+
+################################################################################
+#
+# JProject2 (build 316) README for SiGL
+#
+# JProject2 Author: Rod Harris
+#
+################################################################################
+
+Author: Rod Harris
+
+Organisation: None
+
+Created: Fri Jul 29 20:07:49 EST 2011
+
+
+jmake script options:
+
+Usage: ./jmake [mode] [optional-args]
+
+where modes include:
+
+compile
+	This will compile the source code and create the executable jar file
+	SiGL/bin/sigl.jar
+
+	Files in SiGL/resource will be included in the jar
+	Files in SiGL/copyrights will be included in the jar
+
+	Any dependencies must be in the CLASSPATH, or in the
+	SiGL/lib/dependencies.txt file.
+	These dependencies must be found dynamically at compile and run time.
+
+	[optional-args] are passed to the javac process
+
+
+doc
+	run javadoc over src code and place generated html into SiGL/javadoc
+
+	[optional-args] are passed to the javadoc process
+
+
+clean
+	removes SiGL/javadoc/* [generated documentation]
+	removes SiGL/lib/class/* [compiled class files]
+	removes SiGL/bin/sigl.jar [executable jar file]
+
+	[optional-args] are ignored
+
+
+release
+	make a release snapshot of your project
+
+	requires the 'compiled' jar file
+	jtag must also be in the path
+
+	creates a directory release/build-[#]/
+	creates a directory release/build-[#]/SiGL
+
+	copies bin/sigl.jar to release/build-[#]/SiGL/
+	zips this up in release/build-[#]/SiGL-bin.zip
+
+	javadocs the source and jars it up in release/build-[#]/SiGL-javadoc.jar
+	
+	cleans the project then tars it up as release/build-[#]/SiGL-src.tar.gz
+
+
+branch
+
+	jtag must be in the path
+
+	allows you to branch your source code
+	makes a copy of src and resource in branch/src-[#]
+
+
+**) the compiling stage tries to tag the source code - if you don't have the
+jtag executable it may complain, but it will still build the code, but the
+sigl.LibSiGL.BUILD variable won't be incremented and 
+sigl.LibSiGL.BUILD_TIME won'tbe updated
+
+
+
