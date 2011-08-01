@@ -12,9 +12,9 @@ import static jsi3.lib.text.Statics.*;
 
 public class LibSiGL
 {
-	public static final int BUILD = 85;
+	public static final int BUILD = 86;
 
-	public static final long BUILD_TIME = 1311934394446L;
+	public static final long BUILD_TIME = 1312169688350L;
 	
 
 	public static void main( String[] args ) throws Exception
